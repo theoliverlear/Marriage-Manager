@@ -1,0 +1,39 @@
+// invite.component.scss
+@import "../../../styles/global-variables";
+@import "../../../styles/global-mixins";
+@import "../../../styles/global-functions";
+@import "../../../styles/global-placeholders";
+
+invite {
+    @include flex(center, center, column);
+    width: 100%;
+    .top-line {
+        @include flex(space-between, center, row);
+        margin: $half-percent 0;
+        width: 100%;
+        ss-img {
+            @include square-size($two-half-percent);
+            max-width: $two-half-percent;
+            max-height: $two-half-percent;
+            background-color: $pristine-white;
+            border-radius: 50%;
+            margin: 0 $one-percent 0;
+            padding: $eighth-percent;
+        }
+        ss-title {
+            flex: 1;
+            @include flex(flex-start, center, row);
+            h4 {
+                text-align: start;
+            }
+        }
+        dropdown {
+            //flex: 1;
+            width: $twenty-percent;
+            height: $three-percent;
+        }
+    }
+    hr {
+        width: 95%;
+    }
+}

@@ -1,0 +1,22 @@
+// nav-item.component.scss
+@import "../../../styles/global-variables";
+@import "../../../styles/global-mixins";
+@import "../../../styles/global-functions";
+@import "../../../styles/global-placeholders";
+
+nav-item {
+    @include flex(center, center, row);
+    padding: $one-percent;
+    border-radius: $one-percent;
+    background-color: $pristine-white;
+    flex-basis: calc($eight-percent * 1.02);
+    box-shadow: none;
+    transition: background-color, 0.15s;
+    &:hover {
+        cursor: pointer;
+        background-color: gold;
+    }
+    &:active {
+        background-color: $neutral-black;
+    }
+}

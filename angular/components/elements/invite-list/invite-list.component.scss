@@ -1,0 +1,18 @@
+// invite-list.component.scss
+@import "../../../styles/global-variables";
+@import "../../../styles/global-mixins";
+@import "../../../styles/global-functions";
+@import "../../../styles/global-placeholders";
+
+invite-list {
+    @include flex(center, center, column);
+    background-color: $light-charcoal;
+    padding: $one-percent;
+    width: 85%;
+    margin: $one-percent 0;
+    @extend %soft-border-radius;
+    @extend %soft-raise-above-box-shadow;
+    ss-title {
+        color: $pristine-white;
+    }
+}

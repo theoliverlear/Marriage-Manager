@@ -1,0 +1,7 @@
+<!-- dropdown.component.html -->
+<ng-container>
+    <ss-select (selectedItemChange)="this.emitDropdownSelected($event)"
+               [title]="title"
+               [dropdownItems]="dropdownItems"
+               [selectedItem]="startingSelected"/>
+</ng-container>
