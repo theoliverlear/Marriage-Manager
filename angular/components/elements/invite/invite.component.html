@@ -4,7 +4,7 @@
         <ss-img [imageAsset]="getImageAsset()"/>
         <ss-title [text]="invite.fullName" [tagType]="TagType.H4"/>
         <dropdown [startingSelected]="DropdownOption.from(invite.status)"
-        (dropdownSelected)="updateInvite($event)"/>
+                  (dropdownSelected)="updateInvite($event)"/>
     </div>
     <hr/>
 </ng-container>
