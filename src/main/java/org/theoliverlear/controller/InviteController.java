@@ -18,15 +18,15 @@ public class InviteController {
         this.inviteService = inviteService;
     }
 
-    @GetMapping("/get/all")
-    public ResponseEntity<InvitesResponses> getAllInvites() {
-        InvitesResponses invitesResponses = this.inviteService.getAllInvites();
-        return ResponseEntity.ok(invitesResponses);
-    }
-
     @GetMapping("/add/mock")
     public ResponseEntity<InvitesResponses> addMockInvites() {
         InvitesResponses invitesResponses = this.inviteService.addMockInvites();
+        return ResponseEntity.ok(invitesResponses);
+    }
+
+    @GetMapping("/get/all")
+    public ResponseEntity<InvitesResponses> getAllInvites() {
+        InvitesResponses invitesResponses = this.inviteService.getAllInvites();
         return ResponseEntity.ok(invitesResponses);
     }
 
