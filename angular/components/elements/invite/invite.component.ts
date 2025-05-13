@@ -19,14 +19,10 @@ import {OperationSuccessResponse} from "../../../models/http/types";
     templateUrl: './invite.component.html',
     styleUrls: ['./invite.component.css']
 })
-export class InviteComponent implements OnInit {
+export class InviteComponent {
     @Input() invite: Invite;
     constructor(private setInviteService: HttpSetInviteService) {
         
-    }
-
-    ngOnInit(): void {
-        this.subscribeToInviteSending();
     }
 
     updateInvite(status: string): void {
@@ -34,15 +30,12 @@ export class InviteComponent implements OnInit {
         this.sendUpdatedInviteToServer();
     }
 
-    private subscribeToInviteSending(): void {
-
-    }
-
     sendUpdatedInviteToServer(): void {
-        this.setInviteService.setInvite(this.invite).subscribe((response: OperationSuccessResponse) => {
+        this.setInviteService.setInvite(this.invite).subscribe((response: OperationSuccessResponse): void => {
             console.log(response);
         });
     }
+
     getImageAsset(): ImageAsset {
         switch (this.invite.status) {
             case 'Accepted':
