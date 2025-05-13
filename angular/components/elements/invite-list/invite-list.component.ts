@@ -14,18 +14,21 @@ export class InviteListComponent implements OnInit {
     @Input() invites: InviteList = {
         invites: []
     }
+
     constructor(private getAllInvitesService: HttpGetAllInvitesService) {
         
     }
-    public updateInvites(): void {
-        this.getAllInvitesService.getAllInvites().subscribe(invites => {
+
+    public subscribeToInviteUpdates(): void {
+        this.getAllInvitesService.getAllInvites().subscribe((invites: InviteList): void => {
             console.log(invites);
             if (invites) {
                 this.invites = invites;
             }
         });
     }
+
     ngOnInit(): void {
-        this.updateInvites();
+        this.subscribeToInviteUpdates();
     }
 }
